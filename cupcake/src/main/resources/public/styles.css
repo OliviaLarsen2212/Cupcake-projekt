@@ -1,0 +1,192 @@
+.login-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    background-color: whitesmoke;
+    width: 300px;
+    height: 200px;
+    padding: 30px;
+    gap: 20px;
+    font-family: sans-serif;
+}
+
+.button{
+    color: whitesmoke;
+    background-color: #2e3d30;
+    border-radius: 0px;
+    border: none;
+    font-family: sans-serif;
+    font-size: 15px;
+    width: 200px;
+    height: 50px;
+}
+
+.cupcakeria-cart-button{
+    padding-top:50px;
+}
+
+.login-create-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    flex-direction: row;
+    background-color: #243025;
+    color: whitesmoke;
+    font-family: sans-serif;
+}
+
+.menu-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    padding-right: 20px;
+}
+
+.box-to-background-padding{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: white;
+}
+
+.front-page-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    background-image: url("frontpageBackground.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+.cart-container{
+    display: flex;
+    padding-left: 60px;
+    padding-top: 60px;
+}
+
+.add-to-cart-line{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-acceptance-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 180px;
+    padding-bottom: 350px;
+    gap: 80px;
+    background-image: url("concreteBackground.jpeg");
+    background-size: cover;
+    font-family: sans-serif;
+}
+
+.cupcakeria-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-image: url("cupcakeriaBackground.jpeg");
+    background-size: cover;
+    background-position: center;
+    color: rgba(21, 41, 28, 0.66);
+    font-family: sans-serif;
+}
+
+.merge-bottom-text{
+    margin-top: 150px;
+}
+
+
+
+GLIDER SETTINGS
+.cupcake-stack {
+    position: relative;
+    width: 300px;
+    height: 340px;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+/* TOPPING */
+.topping-slider {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+/* BOTTOM */
+.bottom-slider {
+    position: absolute;
+    bottom: 170px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* GLIDER BILLEDER */
+
+.glider img {
+    width: 400px !important;
+    height: auto !important;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s, border 0.2s;
+}
+
+.glider img:hover {
+    transform: scale(1.05);
+}
+
+.glider img.selected {
+    border: 3px solid #d36c6c;
+}
+
+/* GLIDER-CONTAINER */
+.glider-contain {
+    width: 25% !important;
+    margin: 0 auto 10px auto;
+    position: relative;
+    text-align: center;
+}
+
+/* GLIDER-NAVIGATION */
+.glider-prev,
+.glider-next {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.glider-prev {
+    left: -30px;
+}
+
+.glider-next {
+    right: -30px;
+}
