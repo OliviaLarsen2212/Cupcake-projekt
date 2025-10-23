@@ -1,6 +1,7 @@
 package app.persistence;
 
 import app.entities.Account;
+
 import main.java.app.entities.Order;
 
 import app.exceptions.DatabaseException;
