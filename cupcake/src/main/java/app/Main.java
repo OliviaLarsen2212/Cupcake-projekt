@@ -1,4 +1,4 @@
-package main.java.app;
+package app;
 
 import app.persistence.ConnectionPool;
 

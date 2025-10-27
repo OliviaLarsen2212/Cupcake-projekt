@@ -1,4 +1,4 @@
-package main.java.app.entities;
+package app.entities;
 
 public class Topping {
     private int id;
@@ -22,4 +22,5 @@ public class Topping {
     public int getPrice() {
         return price;
     }
+
 }
