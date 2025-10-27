@@ -3,17 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="../public/styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <header>
     <div class="header-container">
-    <h1>Olsker</h1>
-    <div class="menu-container">
-        <p>Login</p>
-        <p>Home</p>
-        <p>Cupcakeria</p>
-        <p>Cart</p>
-    </div>
+        <h1>Olsker</h1>
+        <div class="menu-container">
+            <form action="/login" method="get">
+                <button class="header-menu-buttons" type="submit">Login</button>
+            </form>
+            <form action="/frontpage" method="get">
+                <button class="header-menu-buttons" type="submit">Home</button>
+            </form>
+            <form action="/cupcakeria" method="get">
+                <button class="header-menu-buttons" type="submit">Cupcakeria</button>
+            </form>
+            <form action="/cart" method="get">
+                <button class="header-menu-buttons" type="submit">Cart</button>
+            </form>
+        </div>
     </div>
 </header>
 <body>
@@ -23,8 +31,8 @@
             <input type="text" placeholder="Email" name="email">
             <input type="text" placeholder="Password" name="psw">
         <div class="login-create-buttons">
-            <button type="submit">Login</button>
-            <button type="submit">Create user</button>
+            <button class="login-create-buttons" type="submit">Login</button>
+            <button class="login-create-buttons" type="submit">Create user</button>
         </div>
     </div>
 </div>

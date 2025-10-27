@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Olsker Cupcakeria</title>
-    <link rel="stylesheet" href="../public/styles.css">
-    <link rel="stylesheet" href="../public/glider.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/glider.css">
 </head>
 <body>
 <header>
     <div class="header-container">
         <h1>Olsker</h1>
         <div class="menu-container">
-            <p>Login</p>
-            <p>Home</p>
-            <p>Cupcakeria</p>
-            <p>Cart</p>
+            <form action="/login" method="get">
+                <button class="header-menu-buttons" type="submit">Login</button>
+            </form>
+            <form action="/frontpage" method="get">
+                <button class="header-menu-buttons" type="submit">Home</button>
+            </form>
+            <form action="/cupcakeria" method="get">
+                <button class="header-menu-buttons" type="submit">Cupcakeria</button>
+            </form>
+            <form action="/cart" method="get">
+                <button class="header-menu-buttons" type="submit">Cart</button>
+            </form>
         </div>
     </div>
 </header>
@@ -27,15 +35,15 @@
     <div class="glider-contain">
         <button class="glider-prev topping-prev">«</button>
         <div class="glider topping-slider">
-            <img src="../public/images/chocolate.png" alt="Chocolate">
-            <img src="../public/images/blueberry.png" alt="Blueberry">
-            <img src="../public/images/raspberry.png" alt="Raspberry">
-            <img src="../public/images/crispy.png" alt="Crispy">
-            <img src="../public/images/rum:raisin.png" alt="Rum/Raisin">
-            <img src="../public/images/strawberry.png" alt="Strawberry">
-            <img src="../public/images/orange.png" alt="Orange">
-            <img src="../public/images/lemon.png" alt="Lemon">
-            <img src="../public/images/bluecheese.png" alt="Blue Cheese">
+            <img src="/images/chocolate.png" alt="Chocolate">
+            <img src="/images/blueberry.png" alt="Blueberry">
+            <img src="/images/raspberry.png" alt="Raspberry">
+            <img src="/images/crispy.png" alt="Crispy">
+            <img src="/images/rum:raisin.png" alt="Rum/Raisin">
+            <img src="/images/strawberry.png" alt="Strawberry">
+            <img src="/images/orange.png" alt="Orange">
+            <img src="/images/lemon.png" alt="Lemon">
+            <img src="/images/bluecheese.png" alt="Blue Cheese">
         </div>
         <button class="glider-next topping-next">»</button>
     </div>
@@ -45,11 +53,11 @@
     <div class="glider-contain">
         <button class="glider-prev bottom-prev">«</button>
         <div class="glider bottom-slider">
-            <img src="../public/images/chocolate-bottom.png" alt="Chocolate bottom">
-            <img src="../public/images/vanilla-bottom.png" alt="Vanilla bottom">
-            <img src="../public/images/nutmeg-bottom.png" alt="Nutmeg bottom">
-            <img src="../public/images/pistachio-bottom.png" alt="Pistachio bottom">
-            <img src="../public/images/almond-bottom.png" alt="Almond bottom">
+            <img src="/images/chocolate-bottom.png" alt="Chocolate bottom">
+            <img src="/images/vanilla-bottom.png" alt="Vanilla bottom">
+            <img src="/images/nutmeg-bottom.png" alt="Nutmeg bottom">
+            <img src="/images/pistachio-bottom.png" alt="Pistachio bottom">
+            <img src="/images/almond-bottom.png" alt="Almond bottom">
         </div>
         <button class="glider-next bottom-next">»</button>
     </div>
@@ -58,9 +66,9 @@
 </div>
 
 <!-- Glider JS -->
-<script src="../public/glider.js"></script>
+<script src="/glider.js"></script>
 
 <!-- Din egen JS -->
-<script src="../public/cupcake-gallery.js"></script>
+<script src="/cupcake-gallery.js"></script>
 </body>
 </html>

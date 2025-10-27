@@ -3,22 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="../public/styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
+
 <header>
   <div class="header-container">
-    <h1>Olsker</h1>
+    <h1 style="font-family: 'BiggyCut'; font-size: 50px">OLSKER</h1>
     <div class="menu-container">
-      <p>Login</p>
-      <p>Home</p>
-      <p>Cupcakeria</p>
-      <p>Cart</p>
+        <form action="/login" method="get">
+            <button class="header-menu-buttons" type="submit">Login</button>
+        </form>
+        <form action="/frontpage" method="get">
+            <button class="header-menu-buttons" type="submit">Home</button>
+        </form>
+        <form action="/cupcakeria" method="get">
+            <button class="header-menu-buttons" type="submit">Cupcakeria</button>
+        </form>
+        <form action="/cart" method="get">
+            <button class="header-menu-buttons" type="submit">Cart</button>
+        </form>
     </div>
   </div>
 </header>
+
 <body>
+
 <div class="front-page-container">
-<button class="button" type="button"> Start your order </button>
+    <form action="/cupcakeria" method="get">
+        <button class="button" type="submit">Start your order</button>
+    </form>
 </div>
 
 </body>
