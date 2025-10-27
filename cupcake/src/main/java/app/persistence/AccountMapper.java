@@ -17,7 +17,7 @@ import java.util.List;
 
 public class AccountMapper {
 
-    public static Account login(String email, String password, ConnectionPool connectionPool) throws DatabaseException {
+    public static Account login(String email, String password, app.persistence.ConnectionPool connectionPool) throws DatabaseException {
 
         String sql = "SELECT * from account where email = ? and password = ?";
 
@@ -43,7 +43,7 @@ public class AccountMapper {
         }
     }
 
-    public static void createAccount(String email, String password, ConnectionPool connectionPool) throws DatabaseException {
+    public static void createAccount(String email, String password, app.persistence.ConnectionPool connectionPool) throws DatabaseException {
         String sql = "insert into account (email, password, admin, balance) values (?,?,?, false, 500)";
         try (Connection connection = connectionPool.getConnection()) {
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
@@ -64,7 +64,7 @@ public class AccountMapper {
         }
     }
 
-    public static List<Order> getAllOrdersByID(int accountID, ConnectionPool connectionPool) throws DatabaseException {
+    public static List<Order> getAllOrdersByID(int accountID, app.persistence.ConnectionPool connectionPool) throws DatabaseException {
 
         List<Order> orders = new ArrayList<>();
 
@@ -91,7 +91,7 @@ public class AccountMapper {
         return orders;
     }
 
-    public static List<Account> getAllCustomers(ConnectionPool connectionPool) throws DatabaseException {
+    public static List<Account> getAllCustomers(app.persistence.ConnectionPool connectionPool) throws DatabaseException {
 
         List<Account> accountList = new ArrayList<>();
 
@@ -119,7 +119,7 @@ public class AccountMapper {
         return accountList;
     }
 
-    public static List<Order> getAllOrders(ConnectionPool connectionPool) throws DatabaseException {
+    public static List<Order> getAllOrders(app.persistence.ConnectionPool connectionPool) throws DatabaseException {
 
         List<Order> orders = new ArrayList<>();
 
@@ -144,7 +144,7 @@ public class AccountMapper {
         return orders;
     }
 
-    public static void adjustBalance(int newBalance, Account account, ConnectionPool connectionPool) throws DatabaseException {
+    public static void adjustBalance(int newBalance, Account account, app.persistence.ConnectionPool connectionPool) throws DatabaseException {
 
         String sql = "UPDATE account SET balance = ? WHERE account_id = ?";
 
