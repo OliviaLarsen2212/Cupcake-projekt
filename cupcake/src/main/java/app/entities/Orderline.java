@@ -1,4 +1,7 @@
-package main.java.app.entities;
+package app.entities;
+
+import app.entities.Bottom;
+import app.entities.Topping;
 
 public class Orderline {
     private int id;

@@ -1,4 +1,4 @@
-package main.java.app.entities;
+package app.entities;
 
 public class Bottom {
     private int id;

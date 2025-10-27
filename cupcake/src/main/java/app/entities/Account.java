@@ -1,6 +1,6 @@
 package app.entities;
 
-import main.java.app.entities.Order;
+import app.entities.Order;
 import java.util.List;
 
 

@@ -1,5 +1,6 @@
-package main.java.app.entities;
+package app.entities;
 
+import app.entities.Orderline;
 import java.util.Date;
 import java.util.List;
 
