@@ -1,7 +1,8 @@
 window.addEventListener('load', function() {
-    // TOPPING SLIDER
-    new Glider(document.querySelector('.topping-slider'), {
-        slidesToShow: 1,       // kun ét billede ad gangen
+    // ====== GLIDER SETUP ======
+
+    const toppingGlider = new Glider(document.querySelector('.topping-slider'), {
+        slidesToShow: 1,
         slidesToScroll: 1,
         draggable: false,
         dots: '.dots',
@@ -11,9 +12,8 @@ window.addEventListener('load', function() {
         }
     });
 
-    // BOTTOM SLIDER
-    new Glider(document.querySelector('.bottom-slider'), {
-        slidesToShow: 1,       // kun ét billede ad gangen
+    const bottomGlider = new Glider(document.querySelector('.bottom-slider'), {
+        slidesToShow: 1,
         slidesToScroll: 1,
         draggable: false,
         dots: '.dots',
@@ -23,20 +23,20 @@ window.addEventListener('load', function() {
         }
     });
 
-    // ⭕ LOOP-effekt for topping
+    // LOOP-effekt for topping
     document.querySelector('.topping-next').addEventListener('click', () => {
         if (toppingGlider.page === toppingGlider.slides.length - 1) {
-            toppingGlider.scrollItem(0); // hop tilbage til start
+            toppingGlider.scrollItem(0);
         }
     });
 
     document.querySelector('.topping-prev').addEventListener('click', () => {
         if (toppingGlider.page === 0) {
-            toppingGlider.scrollItem(toppingGlider.slides.length - 1); // hop til slutning
+            toppingGlider.scrollItem(toppingGlider.slides.length - 1);
         }
     });
 
-    // ⭕ LOOP-effekt for bottom
+    // LOOP-effekt for bottom
     document.querySelector('.bottom-next').addEventListener('click', () => {
         if (bottomGlider.page === bottomGlider.slides.length - 1) {
             bottomGlider.scrollItem(0);
@@ -49,24 +49,37 @@ window.addEventListener('load', function() {
         }
     });
 
-    // Gør billeder klikbare som valg
-    document.querySelectorAll('.glider img').forEach(img => {
-        img.addEventListener('click', () => {
-            const parent = img.closest('.glider');
-            parent.querySelectorAll('img').forEach(i => i.classList.remove('selected'));
-            img.classList.add('selected');
+    // ====== VALG AF TOPPING OG BUND ======
+
+    document.querySelectorAll(".topping-image").forEach(img => {
+        img.addEventListener("click", () => {
+            document.querySelectorAll(".topping-image").forEach(i => i.classList.remove("selected"));
+            img.classList.add("selected");
+
+            // Gem valgte topping ID i skjult inputfelt
+            document.getElementById("selectedToppingId").value = img.dataset.id;
         });
     });
 
-    // "Add to cart" knap
-    document.getElementById('addToCart').addEventListener('click', () => {
-        const topping = document.querySelector('.topping-slider img.selected')?.dataset.value;
-        const bottom = document.querySelector('.bottom-slider img.selected')?.dataset.value;
+    document.querySelectorAll(".bottom-image").forEach(img => {
+        img.addEventListener("click", () => {
+            document.querySelectorAll(".bottom-image").forEach(i => i.classList.remove("selected"));
+            img.classList.add("selected");
 
-        if (!topping || !bottom) {
-            alert('Please select both a topping and a bottom!');
-        } else {
-            alert(`You added a ${topping} + ${bottom} cupcake!`);
+            // Gem valgte bund ID i skjult inputfelt
+            document.getElementById("selectedBottomId").value = img.dataset.id;
+        });
+    });
+
+    // ====== "Add to cart" knap ======
+
+    document.querySelector("#cupcakeForm").addEventListener("submit", (e) => {
+        const toppingId = document.getElementById("selectedToppingId").value;
+        const bottomId = document.getElementById("selectedBottomId").value;
+
+        if (!toppingId || !bottomId) {
+            e.preventDefault(); // stopper form fra at blive sendt
+            alert("Please select both a topping and a bottom!");
         }
     });
 });

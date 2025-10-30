@@ -7,7 +7,7 @@
 </head>
 <header>
     <div class="header-container">
-        <h1>Olsker</h1>
+        <h1 style="font-family: 'BiggyCut'; font-size: 50px">OLSKER</h1>
         <div class="menu-container">
             <form action="/login" method="get">
                 <button class="header-menu-buttons" type="submit">Login</button>
@@ -27,7 +27,19 @@
 <body>
 <div class="cart-container">
 <h1>Your order:</h1>
+</div>
 
+<div class="order-container">
+<div th:if="${basket == null or #lists.isEmpty(basket.orderlines)}">
+    <p>Your cart is empty.</p>
+</div>
+
+<div th:each="line : ${basket.orderlines}">
+    <p>
+        Topping: <span th:text="${line.topping.name}"></span><br>
+        Bottom: <span th:text="${line.bottom.name}"></span>
+    </p>
+</div>
 </div>
 
 <div class="cart-container">

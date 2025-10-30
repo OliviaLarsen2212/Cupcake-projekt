@@ -6,7 +6,7 @@
     font-style: normal;
 }
 
-.login-container{
+.login-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,7 +20,7 @@
     font-family: sans-serif;
 }
 
-.button{
+.button {
     color: whitesmoke;
     background-color: #2e3d30;
     border-radius: 0px;
@@ -31,11 +31,11 @@
     height: 50px;
 }
 
-.cupcakeria-cart-button{
-    padding-top:50px;
+.cupcakeria-cart-button {
+    padding-top: 50px;
 }
 
-.login-create-buttons{
+.login-create-buttons {
     display: flex;
     justify-content: center;
     color: whitesmoke;
@@ -47,7 +47,7 @@
     padding-top: 5px;
 }
 
-.header-container{
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,7 +58,7 @@
     font-family: sans-serif;
 }
 
-.header-menu-buttons{
+.header-menu-buttons {
     color: whitesmoke;
     background-color: #243025;
     font-family: sans-serif;
@@ -66,7 +66,7 @@
     border: none;
 }
 
-.menu-container{
+.menu-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -75,7 +75,7 @@
     padding-right: 20px;
 }
 
-.box-to-background-padding{
+.box-to-background-padding {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,7 +83,7 @@
     background-image: url("concreteBackground.jpeg");
 }
 
-.front-page-container{
+.front-page-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,20 +94,27 @@
     background-position: center;
 }
 
-.cart-container{
+.cart-container {
     display: flex;
     padding-left: 60px;
     padding-top: 60px;
 }
 
-.add-to-cart-line{
+.order-container{
+    display: flex;
+    flex-direction: column;
+    padding-left: 60px;
+    padding-top: 60px;
+}
+
+.add-to-cart-line {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.order-acceptance-container{
+.order-acceptance-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -120,7 +127,7 @@
     font-family: sans-serif;
 }
 
-.cupcakeria-container{
+.cupcakeria-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -134,13 +141,12 @@
     font-family: sans-serif;
 }
 
-.merge-bottom-text{
+.merge-bottom-text {
     margin-top: 150px;
 }
 
 
-
-GLIDER SETTINGS
+/* GLIDER SETTINGS */
 .cupcake-stack {
     position: relative;
     width: 300px;
@@ -149,48 +155,14 @@ GLIDER SETTINGS
     overflow: visible;
 }
 
-/* TOPPING */
-.topping-slider {
-    position: absolute;
-    top: 30px;
-    left: 0;
-    width: 100%;
-    z-index: 2;
-}
-
-/* BOTTOM */
-.bottom-slider {
-    position: absolute;
-    bottom: 170px;
-    left: 0;
-    width: 100%;
-    z-index: 1;
-}
-
 /* GLIDER BILLEDER */
-
-.glider img {
-    width: 400px !important;
-    height: auto !important;
-    object-fit: contain;
-    cursor: pointer;
-    transition: transform 0.2s, border 0.2s;
-}
 
 .glider img:hover {
     transform: scale(1.05);
 }
 
 .glider img.selected {
-    border: 3px solid #d36c6c;
-}
-
-/* GLIDER-CONTAINER */
-.glider-contain {
-    width: 25% !important;
-    margin: 0 auto 10px auto;
-    position: relative;
-    text-align: center;
+    border: none;
 }
 
 /* GLIDER-NAVIGATION */
@@ -212,4 +184,39 @@ GLIDER SETTINGS
 
 .glider-next {
     right: -30px;
+}
+
+
+/*FIX TIL CUPCAKERIA GLIDER-LAYOUT*/
+
+.topping-slider {
+    position: relative;
+    margin-bottom: -160px !important;
+    z-index: 2;
+}
+.bottom-slider {
+    position: relative;
+    margin-top: -100px !important;
+    z-index: 1;
+}
+
+.glider-contain {
+    width: 90% !important;
+    max-width: 350px;
+    margin: 0 auto;
+    margin-bottom: 0;
+    position: relative;
+    text-align: center;
+}
+
+.glider-prev,
+.glider-next {
+    z-index: 10;
+}
+
+.glider img {
+    width: 100% !important;
+    max-width: 400px;
+    height: auto !important;
+    object-fit: contain;
 }
