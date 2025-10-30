@@ -1,0 +1,57 @@
+@startuml
+'https://plantuml.com/state-diagram
+
+scale 700 width
+title State Diagram - Olsker Cupcakes Navigation
+
+[*] --> Frontpage : Start
+
+state Frontpage {
+  note right
+    Forside (frontpage.html)
+    Mulighed for at gå til login
+    eller bestillingssiden
+  end note
+}
+
+Frontpage --> Login : Klik "Login" (/login)
+Frontpage --> Cupcakeria : Klik "Bestil cupcakes" (/cupcakeria)
+
+state Login {
+  note right
+    Login-side (login.html)
+    Efter login sendes bruger
+    tilbage til forsiden
+  end note
+}
+
+Login --> Frontpage : Login gennemført
+
+state Cupcakeria {
+  note right
+    Bestillingsside (cupcakeria.html)
+    Viser toppings og bunde fra databasen
+  end note
+}
+
+Cupcakeria --> Cart : POST /add-to-cart (Tilføj til kurv)
+
+state Cart {
+  note right
+    Kurv (cart.html)
+    Viser valgte cupcakes og totalpris
+  end note
+}
+
+Cart --> OrderAcceptance : Bekræft ordre (/orderAcceptance)
+
+state OrderAcceptance {
+  note right
+    Ordrebekræftelse (orderAcceptance.html)
+    Kurven tømmes fra session
+  end note
+}
+
+OrderAcceptance --> Frontpage : Tilbage til forsiden
+
+@enduml
