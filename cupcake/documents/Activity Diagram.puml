@@ -1,0 +1,31 @@
+@startuml
+start
+
+:Åbn forsiden;
+:Vælg "Cupcakeria";
+
+:Vis toppings og bunde fra database;
+
+:Vælg topping;
+:Vælg bund;
+
+if (Er begge valgt?) then (Ja)
+  :Klik "Add to cart";
+  :System tilføjer cupcake til kurv (session)
+   og viser "Cart"-side;
+else (Nej)
+  :Vis fejlmeddelelse;
+  -> :Vælg topping;
+endif
+
+:Bruger gennemser sin kurv;
+
+if (Klik "Place order"?) then (Ja)
+  :System tømmer kurven;
+  :Vis ordrebekræftelse;
+else (Nej)
+  :Bruger kan tilføje flere cupcakes;
+endif
+
+stop
+@enduml

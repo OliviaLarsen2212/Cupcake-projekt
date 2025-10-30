@@ -1,0 +1,46 @@
+@startuml
+' ========== KLASSER ==========
+class Account {
+  - id : int
+  - email : String
+  - password : String
+  - balance : int
+}
+
+class Order {
+  - id : int
+  - accountId : int
+  - orderSum : int
+}
+
+class Orderline {
+  - id : int
+  - Bottom : bottom
+  - Topping : topping
+  - Amount : int
+}
+
+class Basket {
+  - orderlines : List<Orderline>
+}
+
+class Topping {
+  - id : int
+  - name : String
+  - price : double
+}
+
+class Bottom {
+  - id : int
+  - name : String
+  - price : double
+}
+
+' ========== RELATIONER ==========
+Account --> Order
+Order --> Orderline
+Orderline --> Topping
+Orderline  --> Bottom
+Basket --> Orderline
+
+@enduml
