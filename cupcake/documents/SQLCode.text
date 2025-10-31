@@ -1,0 +1,75 @@
+BEGIN;
+
+
+CREATE TABLE IF NOT EXISTS public.account
+(
+    account_id serial NOT NULL,
+    email character varying COLLATE pg_catalog."default" NOT NULL,
+    password character varying COLLATE pg_catalog."default" NOT NULL,
+    admin boolean NOT NULL,
+    balance integer,
+    CONSTRAINT account_pkey PRIMARY KEY (account_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.bottom
+(
+    bottom_id serial NOT NULL,
+    name character varying COLLATE pg_catalog."default" NOT NULL,
+    price integer NOT NULL,
+    CONSTRAINT cupcake_bottom_pkey PRIMARY KEY (bottom_id)
+);
+
+CREATE TABLE IF NOT EXISTS public."order"
+(
+    order_id serial NOT NULL,
+    order_date date NOT NULL,
+    total_amount integer,
+    fk_account_id serial NOT NULL,
+    CONSTRAINT order_pkey PRIMARY KEY (order_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.orderline
+(
+    orderline_id serial NOT NULL,
+    fk_topping_id serial NOT NULL,
+    fk_bottom_id serial NOT NULL,
+    fk_order_id serial NOT NULL,
+    CONSTRAINT orderline_pkey PRIMARY KEY (orderline_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.topping
+(
+    topping_id serial NOT NULL,
+    name character varying COLLATE pg_catalog."default" NOT NULL,
+    price integer NOT NULL,
+    CONSTRAINT topping_pkey PRIMARY KEY (topping_id)
+);
+
+ALTER TABLE IF EXISTS public."order"
+    ADD CONSTRAINT order_fk_account_id_fkey FOREIGN KEY (fk_account_id)
+    REFERENCES public.account (account_id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION;
+
+
+ALTER TABLE IF EXISTS public.orderline
+    ADD CONSTRAINT orderline_fk_bottom_id_fkey FOREIGN KEY (fk_bottom_id)
+    REFERENCES public.bottom (bottom_id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION;
+
+
+ALTER TABLE IF EXISTS public.orderline
+    ADD CONSTRAINT orderline_fk_order_id_fkey FOREIGN KEY (fk_order_id)
+    REFERENCES public."order" (order_id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION;
+
+
+ALTER TABLE IF EXISTS public.orderline
+    ADD CONSTRAINT orderline_fk_topping_id_fkey FOREIGN KEY (fk_topping_id)
+    REFERENCES public.topping (topping_id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION;
+
+END;
